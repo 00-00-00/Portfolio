@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+  <!-- Base application theme. -->
+  <style name="PortfolioTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/translucent_black
+    </item>
+    <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+    <item name="buttonBarButtonStyle">@style/RobotoButtonStyle</item>
+  </style>
+
+  <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+    <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-light</item>
+  </style>
+
+  <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+    <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-light</item>
+  </style>
+
+
+</resources>

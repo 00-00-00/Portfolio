@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Portfolio</string>
+  <string name="fragment_bio">Bio</string>
+  <string name="fragment_projects">Projects</string>
+</resources>
