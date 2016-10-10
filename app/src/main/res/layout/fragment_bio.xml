@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        android:animateLayoutChanges="true"
         >
 
       <LinearLayout
@@ -59,11 +58,15 @@
             android:id="@+id/f_bio_next"
             android:layout_weight="1"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_touch_app_white_72dp"
+            android:src="@drawable/ic_arrow_drop_down_circle_white_72dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             />
+        <View
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
       </LinearLayout>
 
 

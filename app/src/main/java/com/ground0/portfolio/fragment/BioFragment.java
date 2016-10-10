@@ -17,6 +17,7 @@ import butterknife.OnClick;
 import com.ground0.portfolio.activity.HomeActivity;
 import com.ground0.portfolio.core.components.BaseFragment;
 import com.ground0.portfolio.databinding.FragmentBioBinding;
+import com.ground0.portfolio.util.AnimationUtil;
 import com.ground0.portfolio.util.BackPressHandler;
 import com.ground0.portfolio.util.Constants;
 import com.ground0.portfolio.viewmodel.BioFragmentViewModel;
@@ -88,12 +89,15 @@ public class BioFragment extends BaseFragment<HomeActivity> implements BackPress
   private void invalidateFragmentState() {
     switch (fragmentState) {
       case STATE_1:
-        fragmentBioBinding.fBioContainer1.setVisibility(View.VISIBLE);
-        fragmentBioBinding.fBioContainer2.setVisibility(View.GONE);
+        AnimationUtil.translateAppearView(getContext(), fragmentBioBinding.fBioContainer1, () -> {
+          fragmentBioBinding.fBioContainer2.setVisibility(View.GONE);
+        });
         break;
       case STATE_2:
-        fragmentBioBinding.fBioContainer1.setVisibility(View.GONE);
-        fragmentBioBinding.fBioContainer2.setVisibility(View.VISIBLE);
+        AnimationUtil.translateDisappearView(getContext(), fragmentBioBinding.fBioContainer1,
+            () -> {
+              fragmentBioBinding.fBioContainer2.setVisibility(View.VISIBLE);
+            });
     }
   }
 }
