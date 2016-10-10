@@ -1,12 +1,9 @@
 package com.ground0.portfolio.fragment;
 
 import android.databinding.DataBindingUtil;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +23,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import javax.inject.Inject;
 import com.ground0.portfolio.R;
-import rx.Observable;
-import rx.Subscription;
 
 /**
  * Created by zer0 on 10/10/16.
@@ -81,6 +76,18 @@ public class BioFragment extends BaseFragment<HomeActivity> implements BackPress
     invalidateFragmentState();
   }
 
+  @OnClick(R.id.f_bio_title_1) public void title1Click() {
+    setActiveDescription(R.id.f_bio_title_1);
+  }
+
+  @OnClick(R.id.f_bio_title_2) public void title2Click() {
+    setActiveDescription(R.id.f_bio_title_2);
+  }
+
+  @OnClick(R.id.f_bio_title_3) public void title3Click() {
+    setActiveDescription(R.id.f_bio_title_3);
+  }
+
   private void initUI() {
     Picasso.with(getContext()).load(Constants.Image_URL).into(imageView);
     fragmentState = STATE_1;
@@ -99,5 +106,30 @@ public class BioFragment extends BaseFragment<HomeActivity> implements BackPress
               fragmentBioBinding.fBioContainer2.setVisibility(View.VISIBLE);
             });
     }
+  }
+
+  private void setActiveDescription(int viewId) {
+    switch (viewId) {
+      case R.id.f_bio_title_1:
+        toggleVisibility(fragmentBioBinding.fBioDesc1);
+        fragmentBioBinding.fBioDesc2.setVisibility(View.GONE);
+        fragmentBioBinding.fBioDesc3.setVisibility(View.GONE);
+        break;
+      case R.id.f_bio_title_2:
+        fragmentBioBinding.fBioDesc1.setVisibility(View.GONE);
+        toggleVisibility(fragmentBioBinding.fBioDesc2);
+        fragmentBioBinding.fBioDesc3.setVisibility(View.GONE);
+        break;
+      case R.id.f_bio_title_3:
+        fragmentBioBinding.fBioDesc1.setVisibility(View.GONE);
+        fragmentBioBinding.fBioDesc2.setVisibility(View.GONE);
+        toggleVisibility(fragmentBioBinding.fBioDesc3);
+        break;
+    }
+  }
+
+  private void toggleVisibility(View view) {
+    if (view == null) return;
+    view.setVisibility(view.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
   }
 }
