@@ -1,18 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+  <ScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:orientation="vertical"
+      android:fillViewport="true"
       >
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/fragment_bio"
-        android:textAppearance="?android:textAppearanceLarge"
-        />
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true"
+        >
 
-  </LinearLayout>
+      <LinearLayout
+          android:id="@+id/f_bio_container_1"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:visibility="visible"
+          >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/f_bio_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/view_margin_size3"
+            android:layout_marginTop="@dimen/view_margin_size7"
+            android:scaleType="centerCrop"
+            android:src="@color/colorAccent"
+            app:civ_border_color="@color/md_white_1000"
+            app:civ_border_width="4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/view_margin_size2"
+            android:text="Arjun B"
+            android:textColor="@color/textColorInverse"
+            android:textSize="56sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hellooo, World Ich bin here"
+            android:textColor="@color/md_white_1000"
+            android:textSize="24sp"
+            />
+
+
+        <ImageButton
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:id="@+id/f_bio_next"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_touch_app_white_72dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            />
+      </LinearLayout>
+
+
+
+      <LinearLayout
+          android:gravity="center"
+          android:id="@+id/f_bio_container_2"
+          android:visibility="gone"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:orientation="vertical"
+          android:padding="@dimen/view_margin_size2"
+          >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/view_margin_size2"
+            android:layout_marginRight="@dimen/view_margin_size2"
+            android:drawableLeft="@drawable/ic_palette_white_24dp"
+            android:drawablePadding="@dimen/view_margin_size2"
+            android:gravity="center_vertical"
+            android:text="Design"
+            android:textColor="@color/textColorInverse"
+            android:textSize="24sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="@dimen/view_margin_size2"
+            android:layout_marginTop="@dimen/view_margin_size1"
+            android:background="@color/colorAccent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/view_margin_size2"
+            android:layout_marginRight="@dimen/view_margin_size2"
+            android:drawableLeft="@drawable/ic_build_white_24dp"
+            android:drawablePadding="@dimen/view_margin_size2"
+            android:gravity="center_vertical"
+            android:text="Develop"
+            android:textColor="@color/textColorInverse"
+            android:textSize="24sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="@dimen/view_margin_size2"
+            android:layout_marginTop="@dimen/view_margin_size1"
+            android:background="@color/colorAccent"
+            />
+
+        <TextView
+            android:id="@+id/f_bio_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/view_margin_size2"
+            android:layout_marginRight="@dimen/view_margin_size2"
+            android:drawableLeft="@drawable/ic_grade_white_24dp"
+            android:drawablePadding="@dimen/view_margin_size2"
+            android:gravity="center_vertical"
+            android:text="Deliver"
+            android:textColor="@color/textColorInverse"
+            android:textSize="24sp"
+            />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/view_margin_size1"
+            android:background="@color/colorAccent"
+            />
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
 </layout>

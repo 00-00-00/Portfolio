@@ -1,0 +1,11 @@
+package com.ground0.portfolio.util;
+
+/**
+ * Created by zer0 on 10/10/16.
+ */
+
+public class Constants {
+
+  public static final String Image_URL =
+      "https://lh3.googleusercontent.com/Rh9cPCmrZTPf_f6MAtptX_9l7iDep7Kx2ZeOcnh5pE3-yyn1sQyR6OHm3gUZR1vWBuA4OgFCM_HNKQ2XYkgz-FiO07JmsTCBASz4fjOWNAetwdZQiRyH80LW5mzY0TKs2jkWF8TnCxhTHX0eYGd7S9xcQq3q_k1gbmUtR9anxS1K6Gfjtaa3ukOsbN5pyX_MzL4RH1YdMFDvNyBuoH3bqLWz39-ykG2ezWQcNoID7C5O3mk8mGxEV3W4w6-sUgYPypgMgBCF8IfZTg7sZIMtCXDRhE5GA3TJQa2ODGoutV5iMrw2eDASgQxMMJk3xJT3u6Rtpdct7tpiUj8ZyoBjG7gArANqB4p9POCEIfxKYJmouJy7KsLtijwyoJMJR1bRwgTsOwq9OdCXlJMaRxv-EflrN51kn5nAAJnohmS4e0MsauzZCjw0MFm6A77zjyZLQjBFaEczP7yVOFF7tWmBfFE5pkArkHizSlgK7WUkhg-VeeSCYi3ehgUAqud3OZzbB2Ak2C6o1FYN04ic2SHaUecm-gV_2khcvJrkNdJUy_mJ_eCR5lRwDJxpaTX_ddXYlg4_uy74UNT3riRp3j5wfYrGjzMC4cwsLfNzyVfEZBXuLZB9=w474-h316-no";
+}

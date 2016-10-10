@@ -6,7 +6,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import com.ground0.portfolio.R;
 import com.ground0.portfolio.core.components.BaseActivity;
+import com.ground0.portfolio.core.components.BaseFragment;
 import com.ground0.portfolio.databinding.ActivityBaseBinding;
+import com.ground0.portfolio.util.BackPressHandler;
 import com.ground0.portfolio.viewmodel.HomeActivityViewModel;
 import javax.inject.Inject;
 
@@ -45,12 +47,11 @@ public class HomeActivity extends BaseActivity {
     tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
       @Override public void onTabSelected(TabLayout.Tab tab) {
         viewPager.setCurrentItem(tab.getPosition());
-        switch (tab.getPosition())
-        {
-          case 0 :
+        switch (tab.getPosition()) {
+          case 0:
             getSupportActionBar().setTitle("Bio");
             break;
-          case 1 :
+          case 1:
             getSupportActionBar().setTitle("Projects");
             break;
         }
@@ -64,5 +65,15 @@ public class HomeActivity extends BaseActivity {
 
       }
     });
+  }
+
+  @Override public void onBackPressed() {
+    BaseFragment baseFragment = (BaseFragment) viewModel.getPagerAdapter()
+        .getItem(activityBaseBinding.aBaseViewPager.getCurrentItem());
+    if (baseFragment instanceof BackPressHandler) {
+      if (!((BackPressHandler) baseFragment).onBackPressed()) super.onBackPressed();
+    } else {
+      super.onBackPressed();
+    }
   }
 }

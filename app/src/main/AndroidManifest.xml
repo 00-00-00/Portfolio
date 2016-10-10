@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ground0.portfolio">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
   <application
       android:name=".core.components.BaseApplication"
       android:allowBackup="true"
