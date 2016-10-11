@@ -16,6 +16,8 @@
         app:egAnimationTime="500"
         app:egInnerPaddingColor="@color/md_light_background"
         app:egLegendHeight="0dp"
+        android:focusable="false"
+        android:clickable="false"
         />
 
     <TextView
