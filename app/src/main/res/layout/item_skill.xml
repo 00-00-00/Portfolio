@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+    <org.eazegraph.lib.charts.PieChart
+        android:id="@+id/i_skill_pie"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/view_margin_size2"
+        app:egAnimationTime="500"
+        app:egInnerPaddingColor="@color/md_light_background"
+        app:egLegendHeight="0dp"
+        />
+
+    <TextView
+        android:id="@+id/i_skill_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/view_margin_size2"
+        android:layout_toRightOf="@id/i_skill_pie"
+        android:text="Skill 1"
+        android:textSize="24sp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_alignParentBottom="true"
+        android:background="@color/md_light_dividers"
+        />
+
+
+  </RelativeLayout>
+</layout>

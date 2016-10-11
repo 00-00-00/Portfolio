@@ -38,6 +38,7 @@ public class BioFragment extends BaseFragment<HomeActivity> implements BackPress
 
   public static final int STATE_1 = 0;
   public static final int STATE_2 = 1;
+  public static final String FRAGMENT_STATE_KEY = "biofrag_state_key";
   @BindView(R.id.f_bio_image) ImageView imageView;
   View mRootView;
   FragmentBioBinding fragmentBioBinding;
@@ -86,6 +87,19 @@ public class BioFragment extends BaseFragment<HomeActivity> implements BackPress
 
   @OnClick(R.id.f_bio_title_3) public void title3Click() {
     setActiveDescription(R.id.f_bio_title_3);
+  }
+
+  @Override public void onSaveInstanceState(Bundle outState) {
+
+    outState.putInt(FRAGMENT_STATE_KEY, fragmentState);
+    super.onSaveInstanceState(outState);
+  }
+
+  @Override public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+    super.onViewStateRestored(savedInstanceState);
+    if (savedInstanceState == null) return;
+    //noinspection WrongConstant
+    fragmentState = savedInstanceState.getInt(FRAGMENT_STATE_KEY);
   }
 
   private void initUI() {

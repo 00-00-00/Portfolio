@@ -41,6 +41,7 @@ public class HomeActivity extends BaseActivity {
     ViewPager viewPager = activityBaseBinding.aBaseViewPager;
 
     tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_person_outline_white_24dp));
+    tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_insert_chart_white_24dp));
     tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_devices_white_24dp));
     viewPager.setAdapter(viewModel.getPagerAdapter());
     viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -52,6 +53,9 @@ public class HomeActivity extends BaseActivity {
             getSupportActionBar().setTitle("Bio");
             break;
           case 1:
+            getSupportActionBar().setTitle("Skills");
+            break;
+          case 2:
             getSupportActionBar().setTitle("Projects");
             break;
         }

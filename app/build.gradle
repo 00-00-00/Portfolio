@@ -26,7 +26,7 @@ android {
     enabled = true
   }
 
-  compileOptions{
+  compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
@@ -51,5 +51,7 @@ dependencies {
   compile 'com.squareup.picasso:picasso:2.5.2'
   apt 'com.google.dagger:dagger-compiler:2.0'
   provided 'org.glassfish:javax.annotation:10.0-b28'
+  compile 'com.github.blackfizz:eazegraph:1.2.2@aar'
+  compile 'com.nineoldandroids:library:2.4.0'
   compile project(':model')
 }
