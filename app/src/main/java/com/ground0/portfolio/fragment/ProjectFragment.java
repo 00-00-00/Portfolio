@@ -3,9 +3,12 @@ package com.ground0.portfolio.fragment;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ground0.portfolio.activity.HomeActivity;
 import com.ground0.portfolio.core.components.BaseFragment;
@@ -20,12 +23,13 @@ import com.ground0.portfolio.R;
 
 public class ProjectFragment extends BaseFragment<HomeActivity> {
 
-  @Inject ProjectFragmentViewModel projectFragmentViewModel;
+  @Inject ProjectFragmentViewModel viewModel;
   View mRootView;
+  @BindView(R.id.f_projects_recycler) RecyclerView recyclerView;
   FragmentProjectsBinding fragmentProjectsBinding;
 
   @Override protected void registerFragmentWithViewModel() {
-    projectFragmentViewModel.registerFragment(this);
+    viewModel.registerFragment(this);
   }
 
   @Override protected void injectDependencies() {
@@ -37,7 +41,14 @@ public class ProjectFragment extends BaseFragment<HomeActivity> {
       @Nullable Bundle savedInstanceState) {
     mRootView = inflater.inflate(R.layout.fragment_projects, container, false);
     fragmentProjectsBinding = DataBindingUtil.bind(mRootView);
-    ButterKnife.bind(mRootView);
+    ButterKnife.bind(this, mRootView);
+    initRecyclerView();
     return mRootView;
+  }
+
+  private void initRecyclerView() {
+    recyclerView.setAdapter(viewModel.getRecyclerAdapter());
+    recyclerView.setLayoutManager(
+        new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
   }
 }

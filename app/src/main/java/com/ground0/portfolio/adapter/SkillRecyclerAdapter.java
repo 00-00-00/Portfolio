@@ -56,9 +56,9 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
     switch (getItemViewType(position)) {
       case PRIMARY:
         ((PrimaryViewHolder) holder).pieChart.addPieSlice(new PieModel("", 1,
-            ContextCompat.getColor(holder.itemView.getContext(), R.color.mellow_apricot)));
+            ContextCompat.getColor(holder.itemView.getContext(), R.color.transparent)));
         ((PrimaryViewHolder) holder).pieChart.addPieSlice(new PieModel("", 4,
-            ContextCompat.getColor(holder.itemView.getContext(), R.color.key_lime)));
+            ContextCompat.getColor(holder.itemView.getContext(), R.color.orange_soda)));
         break;
       case DIVIDER:
         ((DividerViewHolder) holder).dividerText.setText("Language");
