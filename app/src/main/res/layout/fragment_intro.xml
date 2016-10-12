@@ -1,7 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    android:background="@color/registration_black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/f_intro_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:gravity="center"
+    >
+  <TextView
+      android:id="@+id/f_intro_title_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:background="?selectableItemBackground"
+      android:drawableLeft="@drawable/ic_palette_white_24dp"
+      android:drawablePadding="@dimen/view_margin_size2"
+      android:paddingLeft="@dimen/view_margin_size2"
+      android:paddingRight="@dimen/view_margin_size2"
+      android:text="Design"
+      android:textColor="@color/textColorInverse"
+      android:textSize="24sp"
+      />
 
-</LinearLayout>
+  <View
+      android:id="@+id/f_intro_divider_1"
+
+      android:layout_width="match_parent"
+      android:layout_height="2dp"
+      android:layout_alignLeft="@id/f_intro_title_1"
+      android:layout_alignRight="@id/f_intro_title_1"
+      android:layout_below="@id/f_intro_title_1"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:layout_marginTop="@dimen/view_margin_size1"
+      android:background="@color/colorAccent"
+      />
+
+  <TextView
+      android:id="@+id/f_intro_desc_1"
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/f_intro_divider_1"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:layout_marginLeft="@dimen/view_margin_size4"
+      android:layout_marginRight="@dimen/view_margin_size4"
+      android:gravity="center"
+      android:text="@string/design_desc"
+      android:textColor="@color/textColorInverse"
+      android:visibility="gone"
+      />
+
+  <TextView
+      android:id="@+id/f_intro_title_2"
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/f_intro_desc_1"
+      android:layout_centerHorizontal="true"
+      android:background="?selectableItemBackground"
+      android:drawableLeft="@drawable/ic_build_white_24dp"
+      android:drawablePadding="@dimen/view_margin_size2"
+      android:paddingLeft="@dimen/view_margin_size2"
+      android:paddingRight="@dimen/view_margin_size2"
+      android:text="Develop"
+      android:textColor="@color/textColorInverse"
+      android:textSize="24sp"
+      />
+
+  <View
+      android:id="@+id/f_intro_divider_2"
+
+      android:layout_width="match_parent"
+      android:layout_height="2dp"
+      android:layout_alignLeft="@id/f_intro_title_2"
+      android:layout_alignRight="@id/f_intro_title_2"
+      android:layout_below="@id/f_intro_title_2"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:layout_marginTop="@dimen/view_margin_size1"
+      android:background="@color/colorAccent"
+      />
+
+  <TextView
+      android:id="@+id/f_intro_desc_2"
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/f_intro_divider_2"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:layout_marginLeft="@dimen/view_margin_size4"
+      android:layout_marginRight="@dimen/view_margin_size4"
+      android:gravity="center"
+      android:text="@string/development_desc"
+      android:textColor="@color/textColorInverse"
+      android:visibility="gone"
+      />
+
+  <TextView
+      android:id="@+id/f_intro_title_3"
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/f_intro_desc_2"
+      android:layout_centerHorizontal="true"
+      android:background="?selectableItemBackground"
+      android:drawableLeft="@drawable/ic_grade_white_24dp"
+      android:drawablePadding="@dimen/view_margin_size2"
+      android:paddingLeft="@dimen/view_margin_size2"
+      android:paddingRight="@dimen/view_margin_size2"
+      android:text="Deliver"
+      android:textColor="@color/textColorInverse"
+      android:textSize="24sp"
+      />
+
+  <View
+      android:id="@+id/f_intro_divider_3"
+
+
+      android:layout_width="match_parent"
+      android:layout_height="2dp"
+      android:layout_alignLeft="@id/f_intro_title_3"
+      android:layout_alignRight="@id/f_intro_title_3"
+      android:layout_below="@+id/f_intro_title_3"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:layout_marginTop="@dimen/view_margin_size1"
+      android:background="@color/colorAccent"
+      />
+
+  <TextView
+      android:id="@+id/f_intro_desc_3"
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/f_intro_divider_3"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:layout_marginLeft="@dimen/view_margin_size4"
+      android:layout_marginRight="@dimen/view_margin_size4"
+      android:gravity="center"
+      android:text="@string/deliver_desc"
+      android:textColor="@color/textColorInverse"
+      android:visibility="gone"
+      />
+</RelativeLayout>

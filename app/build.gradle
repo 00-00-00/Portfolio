@@ -51,7 +51,7 @@ dependencies {
   compile 'com.squareup.picasso:picasso:2.5.2'
   apt 'com.google.dagger:dagger-compiler:2.0'
   provided 'org.glassfish:javax.annotation:10.0-b28'
-  compile 'com.github.blackfizz:eazegraph:1.2.2@aar'
-  compile 'com.nineoldandroids:library:2.4.0'
+  compile 'com.github.zurche:plain-pie:v0.1.1'
+  compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
   compile project(':model')
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import az.plainpie.PieView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ground0.portfolio.R;
@@ -16,8 +17,6 @@ import com.squareup.picasso.Picasso;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
-import org.eazegraph.lib.charts.PieChart;
-import org.eazegraph.lib.models.PieModel;
 
 /**
  * Created by zer0 on 10/10/16.
@@ -55,10 +54,16 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
   @Override public void onBindViewHolder(ViewHolder holder, int position) {
     switch (getItemViewType(position)) {
       case PRIMARY:
-        ((PrimaryViewHolder) holder).pieChart.addPieSlice(new PieModel("", 1,
-            ContextCompat.getColor(holder.itemView.getContext(), R.color.transparent)));
-        ((PrimaryViewHolder) holder).pieChart.addPieSlice(new PieModel("", 4,
-            ContextCompat.getColor(holder.itemView.getContext(), R.color.orange_soda)));
+        ((PrimaryViewHolder) holder).pieChart.setInnerBackgroundColor(
+            ContextCompat.getColor(((PrimaryViewHolder) holder).itemView.getContext(),
+                R.color.md_light_background));
+        ((PrimaryViewHolder) holder).pieChart.setmPercentage(75);
+        ((PrimaryViewHolder) holder).pieChart.setMainBackgroundColor(
+            ContextCompat.getColor(((PrimaryViewHolder) holder).itemView.getContext(),
+                R.color.transparent));
+        ((PrimaryViewHolder) holder).pieChart.setPercentageBackgroundColor(
+            ContextCompat.getColor(((PrimaryViewHolder) holder).itemView.getContext(),
+                R.color.orange_soda));
         break;
       case DIVIDER:
         ((DividerViewHolder) holder).dividerText.setText("Language");
@@ -81,13 +86,13 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
 
     public ViewHolder(View itemView, @ViewType int viewType) {
       super(itemView);
-      this.viewType = viewType;    }
-
+      this.viewType = viewType;
+    }
   }
 
   public class PrimaryViewHolder extends ViewHolder {
 
-    @BindView(R.id.i_skill_pie) public PieChart pieChart;
+    @BindView(R.id.i_skill_pie) public PieView pieChart;
 
     public PrimaryViewHolder(View itemView) {
       super(itemView, PRIMARY);

@@ -1,7 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/f_bio_container_1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:visibility="visible"
+    >
+  <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/f_bio_image"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      android:layout_gravity="center"
+      android:layout_marginBottom="@dimen/view_margin_size3"
+      android:layout_marginTop="@dimen/view_margin_size7"
+      android:scaleType="centerCrop"
+      android:src="@color/colorAccent"
+      app:civ_border_color="@color/md_white_1000"
+      app:civ_border_width="4dp"
+      />
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginBottom="@dimen/view_margin_size2"
+      android:text="Arjun B"
+      android:textColor="@color/textColorInverse"
+      android:textSize="56sp"
+      />
 
+  <TextView
+      android:layout_marginLeft="@dimen/view_margin_size2"
+      android:layout_marginRight="@dimen/view_margin_size2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="@string/descibe_me"
+      android:gravity="center"
+      android:textColor="@color/md_white_1000"
+      android:textSize="24sp"
+      />
+
+  <Space
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      />
+  <TextView
+      android:layout_marginTop="@dimen/view_margin_size2"
+      android:layout_gravity="center"
+      android:textColor="@color/textColorInverse"
+      android:text="@string/scroll_for_more"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+  <ImageView
+      android:layout_gravity="center"
+      android:src="@drawable/ic_arrow_drop_down_white_24dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="2dp"
+      android:background="@color/colorAccent"
+      />
 </LinearLayout>

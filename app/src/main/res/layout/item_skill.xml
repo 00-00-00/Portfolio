@@ -7,16 +7,13 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       >
-    <org.eazegraph.lib.charts.PieChart
+    <az.plainpie.PieView
         android:id="@+id/i_skill_pie"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        app:inner_pie_padding="30"
         android:layout_centerVertical="true"
-        android:padding="@dimen/view_margin_size2"
-        app:egAnimationTime="500"
-        app:egInnerPaddingColor="@color/md_light_background"
-        app:egLegendHeight="0dp"
-        android:isScrollContainer="false"
+        android:layout_margin="@dimen/view_margin_size2"
         />
 
     <TextView
