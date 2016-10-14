@@ -31,5 +31,11 @@ public class ProjectDetailActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     projectDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_project_detail);
     ButterKnife.bind(this);
+    initUI();
+    viewModel.initSubscriptions();
+  }
+
+  private void initUI() {
+    getSupportActionBar().setTitle("Project Name");
   }
 }

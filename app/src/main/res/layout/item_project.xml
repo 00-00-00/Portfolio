@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
+  <data>
+    <variable
+        name="viewModel"
+        type="com.ground0.portfolio.viewmodel.ProjectItemViewModelFactory.ProjectItemViewModel"
+        />
+  </data>
   <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       >
     <android.support.v7.widget.CardView
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
         app:cardBackgroundColor="@color/cardview_light_background"
         app:cardCornerRadius="@dimen/cardview_default_radius"
         app:cardElevation="@dimen/cardview_default_elevation"
@@ -20,34 +26,35 @@
           android:layout_height="wrap_content"
           android:background="?android:selectableItemBackground"
           android:clickable="true"
+          android:onClick="@{viewModel::openDetail}"
           >
         <TextView
             android:id="@+id/i_project_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_margin_size2"
             android:text="Project Name"
             android:textSize="20sp"
-            android:layout_margin="@dimen/view_margin_size2"
             />
         <TextView
-            android:layout_toRightOf="@+id/i_project_name"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:layout_margin="@dimen/view_margin_size2"
             android:id="@+id/i_project_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/view_margin_size2"
+            android:layout_toRightOf="@+id/i_project_name"
+            android:gravity="right"
             android:text="Date"
             />
         <TextView
-            android:layout_marginLeft="@dimen/view_margin_size2"
-            android:layout_marginRight="@dimen/view_margin_size2"
-            android:layout_marginBottom="@dimen/view_margin_size2"
-            android:layout_below="@id/i_project_name"
             android:id="@+id/i_project_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/i_project_name"
+            android:layout_marginBottom="@dimen/view_margin_size2"
+            android:layout_marginLeft="@dimen/view_margin_size2"
+            android:layout_marginRight="@dimen/view_margin_size2"
             android:text="@string/project_description"
             />
       </RelativeLayout>

@@ -1,10 +1,12 @@
 package com.ground0.portfolio.core.components;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import com.ground0.portfolio.activity.ProjectDetailActivity;
 import com.ground0.portfolio.core.di.component.ActivityComponent;
 import com.ground0.portfolio.core.di.component.DaggerActivityComponent;
 import com.ground0.portfolio.core.di.module.BaseActivityModule;
@@ -14,7 +16,7 @@ import rx.subscriptions.CompositeSubscription;
  * Created by zer0 on 9/10/16.
  */
 
-public abstract class BaseFragment<T> extends Fragment {
+public abstract class BaseFragment<T extends BaseActivity> extends Fragment {
 
   CompositeSubscription compositeSubscription;
 
@@ -38,8 +40,8 @@ public abstract class BaseFragment<T> extends Fragment {
 
   protected abstract void injectDependencies();
 
-  protected T getActualActivity() {
-    return (T)getActivity();
+  public T getActualActivity() {
+    return (T) getActivity();
   }
 
   protected ActivityComponent getActivityComponent() {
@@ -50,4 +52,8 @@ public abstract class BaseFragment<T> extends Fragment {
         .build();
   }
 
+  public void startProjectDetailActivity() {
+    Intent intent = new Intent(getActualActivity(), ProjectDetailActivity.class);
+    getActualActivity().startActivity(intent);
+  }
 }

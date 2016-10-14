@@ -34,4 +34,8 @@ public class BaseApplication extends Application {
   public ApplicationComponent getApplicationComponent() {
     return applicationComponent;
   }
+
+  public BehaviorSubject<Event> getAppBehaviourBus() {
+    return appBehaviourBus;
+  }
 }

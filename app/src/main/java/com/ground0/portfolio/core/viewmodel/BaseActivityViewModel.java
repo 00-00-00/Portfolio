@@ -1,6 +1,7 @@
 package com.ground0.portfolio.core.viewmodel;
 
 import com.ground0.portfolio.core.components.BaseActivity;
+import com.ground0.portfolio.core.components.BaseApplication;
 import java.lang.ref.WeakReference;
 
 /**
@@ -17,5 +18,9 @@ public abstract class BaseActivityViewModel<T extends BaseActivity> implements V
 
   public T getActualActivity() {
     return (T) activity.get();
+  }
+
+  public BaseApplication getBaseApplication() {
+    return getActualActivity().getBaseApplication();
   }
 }

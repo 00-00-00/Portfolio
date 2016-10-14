@@ -1,5 +1,6 @@
 package com.ground0.portfolio.viewmodel;
 
+import com.ground0.model.Skill;
 import com.ground0.portfolio.adapter.SkillRecyclerAdapter;
 import com.ground0.portfolio.core.viewmodel.BaseFragmentViewModel;
 import com.ground0.portfolio.fragment.SkillFragment;
@@ -15,9 +16,9 @@ import javax.inject.Inject;
 public class SkillFragmentViewModel extends BaseFragmentViewModel<SkillFragment> {
 
   SkillRecyclerAdapter skillRecyclerAdapter;
-  List<Object> data = new ArrayList<Object>() {{
-    add(new Object());
-    add(new Object());
+  List<Skill> data = new ArrayList<Skill>() {{
+    add(new Skill());
+    add(new Skill());
   }};
 
   @Inject public SkillFragmentViewModel() {

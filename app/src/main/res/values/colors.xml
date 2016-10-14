@@ -16,6 +16,8 @@
   <color name="orange_soda">#fe5e41</color>
   <color name="transparent">#00ffffff</color>
   <color name="translucent_black">#88000000</color>
+  <color name="translucent_apricot">#80fe5e41</color>
+  <color name="translucent_blue">#8064B5F6</color>
 
   <!-- entire material color list -->
   <color name="md_amber_100">#FFECB3</color>

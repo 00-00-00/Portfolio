@@ -53,7 +53,7 @@
           android:id="@+id/a_project_detail_divider1"
           android:layout_width="@dimen/divider"
           android:layout_height="wrap_content"
-          android:layout_alignBottom="@id/a_project_detail_role"
+          android:layout_alignBottom="@+id/a_project_detail_role"
           android:layout_alignLeft="@id/a_project_detail_description"
           android:layout_below="@id/a_project_detail_description"
           android:background="@color/md_light_dividers"

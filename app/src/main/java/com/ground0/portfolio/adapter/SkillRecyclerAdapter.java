@@ -11,6 +11,7 @@ import android.widget.TextView;
 import az.plainpie.PieView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.ground0.model.Skill;
 import com.ground0.portfolio.R;
 import com.ground0.portfolio.util.Constants;
 import com.squareup.picasso.Picasso;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdapter.ViewHolder> {
 
-  List<Object> data;
+  List<Skill> data;
   LayoutInflater layoutInflater;
 
   @Retention(RetentionPolicy.SOURCE) @IntDef({ PRIMARY, DIVIDER }) public @interface ViewType {
@@ -33,7 +34,7 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
   public static final int PRIMARY = 0;
   public static final int DIVIDER = 1;
 
-  public SkillRecyclerAdapter(List<Object> data) {
+  public SkillRecyclerAdapter(List<Skill> data) {
     this.data = data;
   }
 
@@ -54,16 +55,7 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
   @Override public void onBindViewHolder(ViewHolder holder, int position) {
     switch (getItemViewType(position)) {
       case PRIMARY:
-        ((PrimaryViewHolder) holder).pieChart.setInnerBackgroundColor(
-            ContextCompat.getColor(((PrimaryViewHolder) holder).itemView.getContext(),
-                R.color.md_light_background));
-        ((PrimaryViewHolder) holder).pieChart.setmPercentage(75);
-        ((PrimaryViewHolder) holder).pieChart.setMainBackgroundColor(
-            ContextCompat.getColor(((PrimaryViewHolder) holder).itemView.getContext(),
-                R.color.transparent));
-        ((PrimaryViewHolder) holder).pieChart.setPercentageBackgroundColor(
-            ContextCompat.getColor(((PrimaryViewHolder) holder).itemView.getContext(),
-                R.color.orange_soda));
+        ((PrimaryViewHolder) holder).setPieChart();
         break;
       case DIVIDER:
         ((DividerViewHolder) holder).dividerText.setText("Language");
@@ -97,6 +89,16 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
     public PrimaryViewHolder(View itemView) {
       super(itemView, PRIMARY);
       ButterKnife.bind(this, itemView);
+    }
+
+    public void setPieChart() {
+      pieChart.setInnerBackgroundColor(
+          ContextCompat.getColor(itemView.getContext(), R.color.translucent_apricot));
+      pieChart.setmPercentage(75);
+      pieChart.setMainBackgroundColor(
+          ContextCompat.getColor(itemView.getContext(), R.color.transparent));
+      pieChart.setPercentageBackgroundColor(
+          ContextCompat.getColor(itemView.getContext(), R.color.key_lime));
     }
   }
 
