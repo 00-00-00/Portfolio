@@ -29,10 +29,12 @@
       />
 
   <TextView
+      android:id="@+id/f_profiles_github"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:layout_margin="@dimen/view_margin_size2"
+      android:background="?android:selectableItemBackground"
       android:drawableLeft="@drawable/ic_github"
       android:drawablePadding="@dimen/view_margin_size2"
       android:gravity="center_vertical"
@@ -49,10 +51,12 @@
       />
 
   <TextView
+      android:id="@+id/f_profiles_linked"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:layout_margin="@dimen/view_margin_size2"
+      android:background="?android:selectableItemBackground"
       android:drawableLeft="@drawable/ic_linkedin"
       android:drawablePadding="@dimen/view_margin_size2"
       android:gravity="center_vertical"
