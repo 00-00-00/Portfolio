@@ -51,9 +51,4 @@ public abstract class BaseFragment<T extends BaseActivity> extends Fragment {
         .baseActivityModule(new BaseActivityModule((AppCompatActivity) getActivity()))
         .build();
   }
-
-  public void startProjectDetailActivity() {
-    Intent intent = new Intent(getActualActivity(), ProjectDetailActivity.class);
-    getActualActivity().startActivity(intent);
-  }
 }

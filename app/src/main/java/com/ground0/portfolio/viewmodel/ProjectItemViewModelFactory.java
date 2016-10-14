@@ -27,7 +27,7 @@ public class ProjectItemViewModelFactory {
     }
 
     public void openDetail(View view){
-      handler.openDetail(project);
+      handler.openDetail(project, view);
     }
   }
 }

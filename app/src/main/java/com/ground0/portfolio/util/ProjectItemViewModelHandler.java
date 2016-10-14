@@ -1,5 +1,6 @@
 package com.ground0.portfolio.util;
 
+import android.view.View;
 import com.ground0.model.Project;
 
 /**
@@ -7,5 +8,5 @@ import com.ground0.model.Project;
  */
 public interface ProjectItemViewModelHandler {
 
-  public void openDetail(Project project);
+  public void openDetail(Project project, View sharedView);
 }
