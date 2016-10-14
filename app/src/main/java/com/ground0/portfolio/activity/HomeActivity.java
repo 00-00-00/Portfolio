@@ -16,6 +16,8 @@ public class HomeActivity extends BaseActivity {
 
   @Inject HomeActivityViewModel viewModel;
   ActivityBaseBinding activityBaseBinding;
+  private static final String ACTIVITY_HOME_TAB_STATE = "home_tab_state_tag";
+  private int tabState;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class HomeActivity extends BaseActivity {
     tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
       @Override public void onTabSelected(TabLayout.Tab tab) {
         viewPager.setCurrentItem(tab.getPosition());
+        tabState = tab.getPosition();
         switch (tab.getPosition()) {
           case 0:
             getSupportActionBar().setTitle("Bio");
@@ -79,5 +82,19 @@ public class HomeActivity extends BaseActivity {
     } else {
       super.onBackPressed();
     }
+  }
+
+  /**
+   * Saving the tab state of the home activity
+   */
+  @Override protected void onSaveInstanceState(Bundle outState) {
+    if (outState != null) outState.putInt(ACTIVITY_HOME_TAB_STATE, tabState);
+    super.onSaveInstanceState(outState);
+  }
+
+  @Override protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+    if (savedInstanceState != null) tabState = savedInstanceState.getInt(ACTIVITY_HOME_TAB_STATE);
+    activityBaseBinding.aBaseViewPager.setCurrentItem(tabState, false);
   }
 }

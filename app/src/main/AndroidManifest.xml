@@ -17,7 +17,8 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".activity.ProjectDetailActivity"
+    <activity
+        android:name=".activity.ProjectDetailActivity"
         android:theme="@style/PortfolioTheme"
         android:parentActivityName=".activity.HomeActivity"/>
   </application>
