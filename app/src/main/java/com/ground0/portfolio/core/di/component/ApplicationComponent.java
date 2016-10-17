@@ -8,6 +8,7 @@ import com.ground0.portfolio.core.components.BaseApplication;
 import com.ground0.portfolio.core.Event;
 import com.ground0.portfolio.core.di.module.BaseApplicationModule;
 import com.ground0.portfolio.core.di.module.BaseModule;
+import com.ground0.portfolio.core.rx.SubscriptionBuilder;
 import dagger.Component;
 import javax.inject.Singleton;
 import rx.subjects.BehaviorSubject;
@@ -36,4 +37,6 @@ public interface ApplicationComponent {
   BaseApplication baseApplication();
 
   BehaviorSubject<Event> systemBehaviorSubject();
+
+  SubscriptionBuilder defaultActivitySubscription();
 }

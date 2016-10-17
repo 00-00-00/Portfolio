@@ -2,7 +2,9 @@ package com.ground0.portfolio.core.viewmodel;
 
 import com.ground0.portfolio.core.components.BaseActivity;
 import com.ground0.portfolio.core.components.BaseApplication;
+import com.ground0.portfolio.core.rx.SubscriptionBuilder;
 import java.lang.ref.WeakReference;
+import javax.inject.Inject;
 
 /**
  * Created by zer0 on 9/10/16.
@@ -11,6 +13,7 @@ import java.lang.ref.WeakReference;
 public abstract class BaseActivityViewModel<T extends BaseActivity> implements ViewModel {
 
   WeakReference<T> activity;
+  @Inject SubscriptionBuilder subscriptionBuilder;
 
   public void registerActivity(T activity) {
     this.activity = new WeakReference<T>(activity);
@@ -22,5 +25,13 @@ public abstract class BaseActivityViewModel<T extends BaseActivity> implements V
 
   public BaseApplication getBaseApplication() {
     return getActualActivity().getBaseApplication();
+  }
+
+  public SubscriptionBuilder getSubscriptionBuilder() {
+    return subscriptionBuilder;
+  }
+
+  public void setSubscriptionBuilder(SubscriptionBuilder subscriptionBuilder) {
+    this.subscriptionBuilder = subscriptionBuilder;
   }
 }
