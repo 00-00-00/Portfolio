@@ -6,15 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import az.plainpie.PieView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ground0.model.Skill;
 import com.ground0.portfolio.R;
-import com.ground0.portfolio.util.Constants;
-import com.squareup.picasso.Picasso;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
@@ -25,7 +22,7 @@ import java.util.List;
 
 public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdapter.ViewHolder> {
 
-  List<Skill> data;
+  List<Object> data;
   LayoutInflater layoutInflater;
 
   @Retention(RetentionPolicy.SOURCE) @IntDef({ PRIMARY, DIVIDER }) public @interface ViewType {
@@ -34,7 +31,7 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
   public static final int PRIMARY = 0;
   public static final int DIVIDER = 1;
 
-  public SkillRecyclerAdapter(List<Skill> data) {
+  public SkillRecyclerAdapter(List<Object> data) {
     this.data = data;
   }
 
@@ -55,10 +52,12 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
   @Override public void onBindViewHolder(ViewHolder holder, int position) {
     switch (getItemViewType(position)) {
       case PRIMARY:
-        ((PrimaryViewHolder) holder).setPieChart();
+        ((PrimaryViewHolder) holder).setPieChart(
+            ((Skill) data.get(position)).getProficiencyPercent());
+        ((PrimaryViewHolder) holder).textView.setText(((Skill) data.get(position)).getName());
         break;
       case DIVIDER:
-        ((DividerViewHolder) holder).dividerText.setText("Language");
+        ((DividerViewHolder) holder).dividerText.setText((String) data.get(position));
     }
   }
 
@@ -68,7 +67,7 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
 
   @ViewType @Override public int getItemViewType(int position) {
     //Logic for deciding the divider goes here
-    if (position == 0) return DIVIDER;
+    if (data.get(position) instanceof String) return DIVIDER;
     return PRIMARY;
   }
 
@@ -85,16 +84,17 @@ public class SkillRecyclerAdapter extends RecyclerView.Adapter<SkillRecyclerAdap
   public class PrimaryViewHolder extends ViewHolder {
 
     @BindView(R.id.i_skill_pie) public PieView pieChart;
+    @BindView(R.id.i_skill_text) public TextView textView;
 
     public PrimaryViewHolder(View itemView) {
       super(itemView, PRIMARY);
       ButterKnife.bind(this, itemView);
     }
 
-    public void setPieChart() {
+    public void setPieChart(int percentage) {
       pieChart.setInnerBackgroundColor(
           ContextCompat.getColor(itemView.getContext(), R.color.translucent_apricot));
-      pieChart.setmPercentage(75);
+      pieChart.setmPercentage(percentage);
       pieChart.setMainBackgroundColor(
           ContextCompat.getColor(itemView.getContext(), R.color.transparent));
       pieChart.setPercentageBackgroundColor(
