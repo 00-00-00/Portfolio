@@ -1,17 +1,19 @@
 package com.ground0.portfolio.viewmodel;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import com.ground0.model.Project;
 import com.ground0.portfolio.adapter.ProjectRecyclerAdapter;
-import com.ground0.portfolio.core.components.BaseFragment;
 import com.ground0.portfolio.core.event.ProjectDetailViewEvent;
 import com.ground0.portfolio.core.viewmodel.BaseFragmentViewModel;
 import com.ground0.portfolio.fragment.ProjectFragment;
 import com.ground0.portfolio.util.ProjectItemViewModelHandler;
+import com.ground0.repository.RestApiException;
+import com.ground0.repository.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
+import org.apache.commons.lang3.StringUtils;
+import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * Created by zer0 on 10/10/16.
@@ -20,12 +22,9 @@ import javax.inject.Inject;
 public class ProjectFragmentViewModel extends BaseFragmentViewModel<ProjectFragment>
     implements ProjectItemViewModelHandler {
 
+  @Inject UserRepository userRepository;
   ProjectRecyclerAdapter projectRecyclerAdapter;
-  List<Project> data = new ArrayList<Project>() {{
-    add(new Project());
-    add(new Project());
-    add(new Project());
-  }};
+  List<Project> data = new ArrayList<Project>();
 
   @Inject public ProjectFragmentViewModel() {
   }
@@ -37,10 +36,40 @@ public class ProjectFragmentViewModel extends BaseFragmentViewModel<ProjectFragm
     return projectRecyclerAdapter;
   }
 
+  public void setData(List<Project> data) {
+    if (data == null) return;
+    this.data.clear();
+    this.data.addAll(data);
+    projectRecyclerAdapter.notifyDataSetChanged();
+  }
+
+  @Override public void afterRegister() {
+    super.afterRegister();
+    fetchProjects();
+  }
+
   @Override public void openDetail(Project project, View sharedView) {
     if (project != null) {
       getBaseApplication().getAppBehaviourBus().onNext(new ProjectDetailViewEvent(project));
       getActualFragment().startProjectDetailActivity(sharedView);
     }
+  }
+
+  private void fetchProjects() {
+    getCompositeSubscription().add(userRepository.getProjects()
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(subscriptionBuilder.builder().onNext(val -> {
+          setData((List<Project>) val);
+        }).onError(e -> {
+          String errorText = "Something went wrong";
+          if (e instanceof RestApiException) {
+            RestApiException restApiException = (RestApiException) e;
+            if (restApiException.getError() != null) {
+              errorText = StringUtils.isNotEmpty(restApiException.getError().getMessage())
+                  ? restApiException.getError().getMessage() : errorText;
+            }
+          }
+          getActualFragment().displayError(errorText);
+        }).setFinishOnComplete().build()));
   }
 }

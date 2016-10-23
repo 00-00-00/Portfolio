@@ -68,4 +68,8 @@ public class ProjectFragment extends BaseFragment<HomeActivity> {
       startActivity(intent);
     }
   }
+
+  public void displayError(String errorText) {
+    getActualActivity().showSnackBar(errorText);
+  }
 }

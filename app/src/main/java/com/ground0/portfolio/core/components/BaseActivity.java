@@ -2,10 +2,11 @@ package com.ground0.portfolio.core.components;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import com.ground0.portfolio.core.Event;
 import com.ground0.portfolio.core.di.component.ApplicationComponent;
-import rx.subjects.BehaviorSubject;
 import rx.subjects.PublishSubject;
 import rx.subscriptions.CompositeSubscription;
 
@@ -42,5 +43,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   public PublishSubject<Event> getLocalPublishBus() {
     return localPublishBus;
+  }
+
+  public void showSnackBar(String content) {
+    View view = getWindow().getDecorView().getRootView().findViewById(android.R.id.content);
+    Snackbar snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG);
+    snackbar.setText(content);
+    snackbar.show();
   }
 }

@@ -1,7 +1,9 @@
 package com.ground0.repository;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import android.util.Log;
 import java.io.IOException;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import retrofit2.Response;
 import rx.Observable;
 import rx.Subscriber;
@@ -9,11 +11,12 @@ import rx.Subscriber;
 /**
  * Created by zer0 on 17/10/16.
  */
-public class HttpResponseStatusOperator<T> implements Observable.Operator<T, Response<T>> {
+@Singleton public class HttpResponseStatusOperator<T> implements Observable.Operator<T, Response<T>> {
 
-  ObjectMapper objectMapper;
+  CustomObjectMapper objectMapper;
 
-  public HttpResponseStatusOperator(ObjectMapper objectMapper) {
+  @Inject
+  public HttpResponseStatusOperator(CustomObjectMapper objectMapper) {
     this.objectMapper = objectMapper;
   }
 
@@ -31,6 +34,7 @@ public class HttpResponseStatusOperator<T> implements Observable.Operator<T, Res
 
       @Override public void onNext(Response<T> response) {
         if (subscriber.isUnsubscribed())return;
+        Log.d(getClass().getSimpleName(), response.body().toString());
         if (response.isSuccessful()) {
           subscriber.onNext(response.body());
         }

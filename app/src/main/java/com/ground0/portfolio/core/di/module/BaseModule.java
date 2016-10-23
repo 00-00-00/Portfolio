@@ -1,10 +1,14 @@
 package com.ground0.portfolio.core.di.module;
 
 import android.content.Context;
-import com.ground0.portfolio.core.components.BaseApplication;
 import com.ground0.portfolio.core.Event;
+import com.ground0.portfolio.core.components.BaseApplication;
+import com.ground0.repository.UserRepositoryImpl;
+import com.ground0.repository.repository.UserRepository;
+import com.ground0.repository.store.CloudDataStore;
 import dagger.Module;
 import dagger.Provides;
+import javax.inject.Named;
 import javax.inject.Singleton;
 import rx.subjects.BehaviorSubject;
 
@@ -27,6 +31,15 @@ import rx.subjects.BehaviorSubject;
 
   @Provides @Singleton BehaviorSubject<Event> provideBehaviorSubject() {
     return behaviorSubject;
+  }
+
+  @Provides @Singleton UserRepository provideUserRepository(UserRepositoryImpl repository) {
+    return repository;
+  }
+
+  @Provides @Singleton @Named("cloudStore") UserRepository provideCloudDataStore(
+      CloudDataStore store) {
+    return store;
   }
 
 }
