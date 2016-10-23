@@ -12,4 +12,6 @@
   <string name="descibe_me">Creative, Dedicated, Passionate, Rational and Objective</string>
   <string name="role_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n Vestibulum vel viverra metus. Curabitur purus mi, blandit sed lacus nec, congue pretium quam.\n\n Phasellus in fermentum lectus, eu placerat orci.</string>
   <string name="activity_image_trans">project_detail_transition</string>
+  <string name="retry">Retry</string>
+  <string name="failed_to_load">Error fetching content</string>
 </resources>

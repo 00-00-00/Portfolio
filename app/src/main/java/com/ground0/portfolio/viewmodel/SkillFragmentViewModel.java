@@ -67,10 +67,12 @@ public class SkillFragmentViewModel extends BaseFragmentViewModel<SkillFragment>
   }
 
   private void fetchSkills() {
+    getActualFragment().initDataLoad();
     getCompositeSubscription().add(userRepository.getSkills()
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(subscriptionBuilder.builder().onNext(val -> {
           setData((List<Skill>) val);
+          getActualFragment().dataLoadComplete();
         }).onError(e -> {
           String errorText = "Something went wrong";
           if (e instanceof RestApiException) {
@@ -80,7 +82,7 @@ public class SkillFragmentViewModel extends BaseFragmentViewModel<SkillFragment>
                   ? restApiException.getError().getMessage() : errorText;
             }
           }
-          getActualFragment().displayError(errorText);
+          getActualFragment().dataLoadFailed(errorText);
         }).setFinishOnComplete().build()));
   }
 
@@ -89,7 +91,7 @@ public class SkillFragmentViewModel extends BaseFragmentViewModel<SkillFragment>
       if (skill1.getProficiencyPercent().equals(skill2.getProficiencyPercent())) {
         return skill1.getName().compareTo(skill2.getName());
       }
-      return skill1.getProficiencyPercent().compareTo(skill2.getProficiencyPercent());
+      return -skill1.getProficiencyPercent().compareTo(skill2.getProficiencyPercent());
     } else {
       return (skill1.getCategory().compareTo(skill2.getCategory()));
     }
@@ -113,5 +115,13 @@ public class SkillFragmentViewModel extends BaseFragmentViewModel<SkillFragment>
       if (!strings.contains(skill.getCategory())) strings.add(skill.getCategory());
     }
     return strings;
+  }
+
+  public void reloadData() {
+    fetchSkills();
+  }
+
+  public List<Object> getData() {
+    return data;
   }
 }

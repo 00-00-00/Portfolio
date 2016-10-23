@@ -45,6 +45,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     return localPublishBus;
   }
 
+  public void showSnackBar(String content, String action, View.OnClickListener onClickListener) {
+    View view = getWindow().getDecorView().getRootView().findViewById(android.R.id.content);
+    Snackbar snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG);
+    snackbar.setText(content);
+    snackbar.setAction(action, onClickListener);
+    snackbar.show();
+  }
+
   public void showSnackBar(String content) {
     View view = getWindow().getDecorView().getRootView().findViewById(android.R.id.content);
     Snackbar snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG);

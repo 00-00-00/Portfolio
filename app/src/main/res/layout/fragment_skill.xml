@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/f_skill_swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/f_skill_recycler"
-    />
+    >
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/f_skill_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="@dimen/view_margin_size1"
+        android:drawableTop="@drawable/ic_cloud_off_grey_72dp"
+        android:gravity="center"
+        android:text="@string/failed_to_load"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/f_skill_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+  </FrameLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
