@@ -34,7 +34,7 @@ public class ProjectDetailActivity extends BaseActivity {
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     projectDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_project_detail);
-    projectDetailBinding.setViewmodel(viewModel);
+    projectDetailBinding.setViewModel(viewModel);
     ButterKnife.bind(this);
     initUI();
     viewModel.initSubscriptions();

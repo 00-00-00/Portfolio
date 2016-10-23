@@ -46,6 +46,7 @@ public class HomeActivity extends BaseActivity {
     tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_insert_chart_white_24dp));
     tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_devices_white_24dp));
     viewPager.setAdapter(viewModel.getPagerAdapter());
+    viewPager.setOffscreenPageLimit(2);
     viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
       @Override public void onTabSelected(TabLayout.Tab tab) {
