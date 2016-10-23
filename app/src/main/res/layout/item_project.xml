@@ -33,6 +33,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/view_margin_size2"
+            android:maxLines="1"
+            android:maxLength="25"
+            android:ellipsize="end"
             android:text="@{viewModel.project.name}"
             android:textSize="20sp"
             />
@@ -40,11 +43,14 @@
             android:id="@+id/i_project_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/i_project_name"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_margin="@dimen/view_margin_size2"
             android:layout_toRightOf="@+id/i_project_name"
             android:gravity="right"
+            android:minEms="10"
+            android:maxLines="1"
             android:text="@{viewModel.date}"
             />
         <TextView
@@ -55,6 +61,8 @@
             android:layout_marginBottom="@dimen/view_margin_size2"
             android:layout_marginLeft="@dimen/view_margin_size2"
             android:layout_marginRight="@dimen/view_margin_size2"
+            android:ellipsize="end"
+            android:maxLines="3"
             android:text="@{viewModel.project.description}"
             />
       </RelativeLayout>

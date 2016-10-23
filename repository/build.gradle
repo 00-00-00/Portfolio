@@ -11,7 +11,7 @@ android {
     versionCode 1
     versionName "1.0"
     buildConfigField 'String', 'HOST',
-        '"http://raw.githubusercontent.com/00-00-00/Portfolio/"'
+        '"http://raw.githubusercontent.com/00-00-00/Portfolio/master2/"'
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
   buildTypes {

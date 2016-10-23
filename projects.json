@@ -1,11 +1,11 @@
 [
 {
-	"name": "Eclinic247 : Consult a doctor",
+	"name": "Consult a doctor",
 	"organisation": "Eclinic247",
 	"position": "Android Developer",
 	"date": "2016-10-05 12:04:54",
-	"roleDescription": "role",
-	"description":"Well architectured, stable, reusable, scalable and maintainable application.\nModel View ViewModel architectural pattern\nEvent Buses from Reactive Java for inter class communication.\nCode practises based on design patterns for maximum code structure, reusability and maintainability.\nLatest Android SDK capabilities like data binding for code cleanliness."
+	"description": "The patient facing Android application to the Eclinic247 platform",
+	"roleDescription":"Well architectured, stable, reusable, scalable and maintainable application.\n\nModel View ViewModel architectural pattern\n\nEvent Buses from Reactive Java for inter class communication.\nCode practises based on design patterns for maximum code structure, reusability and maintainability.\n\nLatest Android SDK capabilities like data binding for code cleanliness."
 },
 {
       "name": "project name",

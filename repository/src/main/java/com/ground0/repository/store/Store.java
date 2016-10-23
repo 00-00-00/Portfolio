@@ -12,5 +12,5 @@ import rx.Observable;
 
 public interface Store {
 
-  @GET("c06d7127109d390df3ced9727a31b089d3f81ea7/projects.json") Observable<Response<List<Project>>> getProjects();
+  @GET("projects.json") Observable<Response<List<Project>>> getProjects();
 }

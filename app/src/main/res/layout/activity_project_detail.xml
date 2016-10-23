@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
+  <data>
+    <variable
+        name="viewmodel"
+        type="com.ground0.portfolio.viewmodel.ProjectDetailActivityViewModel"
+        />
+  </data>
 
   <android.support.v7.widget.CardView
       android:id="@+id/a_project_detail_container"
@@ -24,8 +30,9 @@
           android:id="@+id/a_project_detail_name"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_below="@+id/a_project_detail_date"
           android:layout_margin="@dimen/view_margin_size2"
-          android:text="Project Name"
+          android:text="@{viewModel.project.name}"
           android:textSize="20sp"
           />
       <TextView
@@ -34,10 +41,13 @@
           android:layout_height="wrap_content"
           android:layout_alignParentRight="true"
           android:layout_alignParentTop="true"
-          android:layout_margin="@dimen/view_margin_size2"
+          android:layout_marginBottom="@dimen/view_margin_size1"
+          android:layout_marginLeft="@dimen/view_margin_size2"
+          android:layout_marginRight="@dimen/view_margin_size2"
+          android:layout_marginTop="@dimen/view_margin_size2"
           android:layout_toRightOf="@+id/a_project_detail_name"
           android:gravity="right"
-          android:text="Date"
+          android:text="@{viewmodel.date}"
           />
       <TextView
           android:id="@+id/a_project_detail_description"
@@ -47,7 +57,7 @@
           android:layout_marginBottom="@dimen/view_margin_size2"
           android:layout_marginLeft="@dimen/view_margin_size2"
           android:layout_marginRight="@dimen/view_margin_size2"
-          android:text="@string/project_description"
+          android:text="@{viewmodel.project.description}"
           />
 
       <View
@@ -68,7 +78,7 @@
           android:layout_marginLeft="@dimen/view_margin_size4"
           android:layout_marginRight="@dimen/view_margin_size2"
           android:layout_marginTop="@dimen/view_margin_size4"
-          android:text="Company Name"
+          android:text="@{viewmodel.project.organisation}"
           android:textSize="16sp"
           />
 
@@ -80,7 +90,7 @@
           android:layout_marginLeft="@dimen/view_margin_size4"
           android:layout_marginRight="@dimen/view_margin_size2"
           android:layout_marginTop="@dimen/view_margin_size4"
-          android:text="Position"
+          android:text="@{viewmodel.project.organisation}"
           />
 
 
@@ -93,7 +103,7 @@
           android:layout_marginLeft="@dimen/view_margin_size4"
           android:layout_marginRight="@dimen/view_margin_size2"
           android:layout_marginTop="@dimen/view_margin_size4"
-          android:text="@string/project_description"
+          android:text="@{viewmodel.project.roleDescription}"
           />
     </RelativeLayout>
 
