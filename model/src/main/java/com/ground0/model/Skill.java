@@ -8,6 +8,15 @@ public class Skill {
 
   Integer proficiencyPercent;
   String category;
+  String name;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
   public Integer getProficiencyPercent() {
     return proficiencyPercent;

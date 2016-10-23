@@ -1,6 +1,7 @@
 package com.ground0.repository;
 
 import com.ground0.model.Project;
+import com.ground0.model.Skill;
 import com.ground0.repository.repository.UserRepository;
 import java.util.List;
 import javax.inject.Inject;
@@ -20,5 +21,9 @@ import rx.Observable;
 
   @Override public Observable<List<Project>> getProjects() {
     return cloudDataStore.getProjects();
+  }
+
+  @Override public Observable<List<Skill>> getSkills() {
+    return cloudDataStore.getSkills();
   }
 }

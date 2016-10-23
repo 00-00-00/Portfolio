@@ -2,6 +2,7 @@ package com.ground0.repository.store;
 
 import android.util.Log;
 import com.ground0.model.Project;
+import com.ground0.model.Skill;
 import com.ground0.repository.BuildConfig;
 import com.ground0.repository.CustomObjectMapper;
 import com.ground0.repository.HttpResponseStatusOperator;
@@ -32,8 +33,7 @@ import rx.schedulers.Schedulers;
   private Store restImpl;
   HttpResponseStatusOperator responseStatusOperator;
 
-  @Inject
-  public CloudDataStore(CustomObjectMapper customObjectMapper) {
+  @Inject public CloudDataStore(CustomObjectMapper customObjectMapper) {
     this.objectMapper = customObjectMapper;
     this.responseStatusOperator = new HttpResponseStatusOperator(objectMapper);
     this.host = BuildConfig.HOST;
@@ -54,5 +54,9 @@ import rx.schedulers.Schedulers;
 
   @Override public Observable<List<Project>> getProjects() {
     return restImpl.getProjects().lift(responseStatusOperator);
+  }
+
+  @Override public Observable<List<Skill>> getSkills() {
+    return restImpl.getSkills().lift(responseStatusOperator);
   }
 }

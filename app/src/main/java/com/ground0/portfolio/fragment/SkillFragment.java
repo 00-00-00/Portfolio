@@ -49,4 +49,8 @@ public class SkillFragment extends BaseFragment<HomeActivity> {
         new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     return;
   }
+
+  public void displayError(String errorText) {
+    getActualActivity().showSnackBar(errorText);
+  }
 }

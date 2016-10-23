@@ -1,0 +1,21 @@
+[
+{
+	"name": "Android Development",
+	"category": "Platform",
+	"proficiencyPercent": "90"
+},
+{
+      	"name": "Java",
+	"category": "Language",
+	"proficiencyPercent": "60"
+},
+{
+	"name": "C++",
+	"category": "Language",
+	"proficiencyPercent": "40"
+},
+{
+	"name": "C",
+	"category": "Language",
+	"proficiencyPercent": "40"
+}]
