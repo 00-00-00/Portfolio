@@ -3,7 +3,7 @@
 	"name": "Consult a doctor",
 	"organisation": "Eclinic247",
 	"position": "Android Developer",
-	"date": "2016-10-05 12:04:54",
+	"date": "2016-04-01 12:00:00",
 	"description": "The patient facing Android application to the Eclinic247 platform",
 	"roleDescription":"Well architectured, stable, reusable, scalable and maintainable application.\n\nModel View ViewModel architectural pattern\n\nEvent Buses from Reactive Java for inter class communication.\nCode practises based on design patterns for maximum code structure, reusability and maintainability.\n\nLatest Android SDK capabilities like data binding for code cleanliness."
 },
@@ -11,7 +11,7 @@
       	"name": "Grow your practise",
 	"organisation": "Eclinic247",
 	"position": "Android Developer",
-	"date": "2016-10-05 12:04:54",
+	"date": "2015-11-12 12:00:00",
 	"description": "The doctor facing Android application to the Eclinic247 platform",
 	"roleDescription":"Application made from the reusable skeletal structure which the patient application inherits as well.\n\nCommon utility and resources between the applications for easy maintenance of the repository."
 },
@@ -19,7 +19,7 @@
 	"name": "Cherrywork",
 	"organisation": "Incture Technologies",
 	"position": "Software Engineer",
-	"date": "2016-10-05 12:04:54",
+	"date": "2015-07-01 12:00:00",
 	"description": "A Mobility solution for Enterprise Resource Planning",
 	"roleDescription":"Design of applications that simplifies the actions required to handle the various scenarios an enterprise requires.\n\nDevelopment of applications that can be reusable so as to be able to be repurposed and integrated into a larger platform.\n\nIndependent applications making context aware decisions."
 },
@@ -27,7 +27,7 @@
 	"name": "Recapo",
 	"organisation": "University of Paderborn, Germany",
 	"position": "Bachelor of Technology",
-	"date": "2016-10-05 12:04:54",
+	"date": "2015-04-20 12:00:00",
 	"description": "Prototypical implementation of an Android application that can perform Reverse Card Sorting experiment",
 	"roleDescription":"An application that constructs itself based off information architecture received from the server\n\nRecords and Updates the server on the experimental data\n\nUnderstanding about the usability and usability testing of applications and information architectures."
 }]

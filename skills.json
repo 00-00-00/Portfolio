@@ -1,7 +1,7 @@
 [
 {
 	"name": "Android Development",
-	"category": "Platform",
+	"category": "Top Skills",
 	"proficiencyPercent": "90"
 },
 {
@@ -12,10 +12,60 @@
 {
 	"name": "C++",
 	"category": "Language",
-	"proficiencyPercent": "40"
+	"proficiencyPercent": "50"
 },
 {
 	"name": "C",
 	"category": "Language",
-	"proficiencyPercent": "40"
+	"proficiencyPercent": "50"
+},
+{
+	"name": "MySQL",
+	"category": "Language",
+	"proficiencyPercent": "50"
+},
+{
+	"name": "HTML",
+	"category": "Language",
+	"proficiencyPercent": "80"
+},
+{
+	"name": "CSS",
+	"category": "Language",
+	"proficiencyPercent": "60"
+},
+{
+	"name": "User Experience Design",
+	"category": "Top Skills",
+	"proficiencyPercent": "80"
+},
+{
+	"name": "User Interface Design",
+	"category": "Language",
+	"proficiencyPercent": "60"
+},
+{
+	"name": "Dependency Injection",
+	"category": "Tools",
+	"proficiencyPercent": "80"
+},
+{
+	"name": "Data Binding",
+	"category": "Tools",
+	"proficiencyPercent": "100"
+},
+{
+	"name": "RxJava",
+	"category": "Tools",
+	"proficiencyPercent": "80"
+},
+{
+	"name": "Retrofit",
+	"category": "Tools",
+	"proficiencyPercent": "100"
+},
+{
+	"name": "JSON libraries",
+	"category": "Tools",
+	"proficiencyPercent": "80"
 }]
