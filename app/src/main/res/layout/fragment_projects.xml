@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/f_projects_recycler"
+
+  <android.support.v4.widget.SwipeRefreshLayout
+      android:id="@+id/f_projects_swipe_refresh"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      />
+      >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+      <TextView
+          android:visibility="invisible"
+          android:id="@+id/f_projects_empty_view"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:drawablePadding="@dimen/view_margin_size1"
+          android:drawableTop="@drawable/ic_cloud_off_grey_72dp"
+          android:gravity="center"
+          android:text="@string/failed_to_load"
+          />
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/f_projects_recycler"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          />
+    </FrameLayout>
+  </android.support.v4.widget.SwipeRefreshLayout>
 </layout>

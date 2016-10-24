@@ -56,10 +56,12 @@ public class ProjectFragmentViewModel extends BaseFragmentViewModel<ProjectFragm
   }
 
   private void fetchProjects() {
+    getActualFragment().initDataLoad();
     getCompositeSubscription().add(userRepository.getProjects()
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(subscriptionBuilder.builder().onNext(val -> {
           setData((List<Project>) val);
+          getActualFragment().dataLoadComplete();
         }).onError(e -> {
           String errorText = "Something went wrong";
           if (e instanceof RestApiException) {
@@ -69,7 +71,15 @@ public class ProjectFragmentViewModel extends BaseFragmentViewModel<ProjectFragm
                   ? restApiException.getError().getMessage() : errorText;
             }
           }
-          getActualFragment().displayError(errorText);
+          getActualFragment().dataLoadFailed(errorText);
         }).setFinishOnComplete().build()));
+  }
+
+  public void reloadData() {
+    fetchProjects();
+  }
+
+  public List<Project> getData() {
+    return data;
   }
 }

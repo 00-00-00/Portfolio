@@ -6,6 +6,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,6 +32,8 @@ public class ProjectFragment extends BaseFragment<HomeActivity> {
   @Inject ProjectFragmentViewModel viewModel;
   View mRootView;
   @BindView(R.id.f_projects_recycler) RecyclerView recyclerView;
+  @BindView(R.id.f_projects_empty_view) View emptyView;
+  @BindView(R.id.f_projects_swipe_refresh) SwipeRefreshLayout swipeRefreshLayout;
   FragmentProjectsBinding fragmentProjectsBinding;
 
   @Override protected void registerFragmentWithViewModel() {
@@ -54,6 +58,13 @@ public class ProjectFragment extends BaseFragment<HomeActivity> {
     recyclerView.setAdapter(viewModel.getRecyclerAdapter());
     recyclerView.setLayoutManager(
         new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+    swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getContext(), R.color.key_lime),
+        ContextCompat.getColor(getContext(), R.color.orange_soda),
+        ContextCompat.getColor(getContext(), R.color.mellow_apricot),
+        ContextCompat.getColor(getContext(), R.color.munsel_green));
+    swipeRefreshLayout.setOnRefreshListener(() -> {
+      viewModel.reloadData();
+    });
   }
 
   public void startProjectDetailActivity(View sharedViews) {
@@ -69,7 +80,28 @@ public class ProjectFragment extends BaseFragment<HomeActivity> {
     }
   }
 
-  public void displayError(String errorText) {
-    getActualActivity().showSnackBar(errorText);
+  public void initDataLoad() {
+    swipeRefreshLayout.setRefreshing(true);
+  }
+
+  public void dataLoadComplete() {
+    swipeRefreshLayout.post(() -> {
+      swipeRefreshLayout.setRefreshing(false);
+    });
+    if (viewModel.getData().size() == 0) {
+      toggleEmptyView(true);
+    } else {
+      toggleEmptyView(false);
+    }
+  }
+
+  public void toggleEmptyView(boolean show) {
+    emptyView.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
+  }
+
+  public void dataLoadFailed(String errorText) {
+    dataLoadComplete();
+    getActualActivity().showSnackBar(errorText, getString(R.string.retry),
+        view -> viewModel.reloadData());
   }
 }
