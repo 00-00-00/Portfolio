@@ -1,7 +1,5 @@
 package com.ground0.portfolio.viewmodel;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.PagerAdapter;
 import com.ground0.portfolio.activity.HomeActivity;
 import com.ground0.portfolio.adapter.HomePagerAdapter;
 import com.ground0.portfolio.core.viewmodel.BaseActivityViewModel;

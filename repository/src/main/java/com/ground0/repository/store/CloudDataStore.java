@@ -2,6 +2,7 @@ package com.ground0.repository.store;
 
 import android.util.Log;
 import com.ground0.model.Project;
+import com.ground0.model.Self;
 import com.ground0.model.Skill;
 import com.ground0.repository.BuildConfig;
 import com.ground0.repository.CustomObjectMapper;
@@ -58,5 +59,9 @@ import rx.schedulers.Schedulers;
 
   @Override public Observable<List<Skill>> getSkills() {
     return restImpl.getSkills().lift(responseStatusOperator);
+  }
+
+  @Override public Observable<Self> getSelf() {
+    return restImpl.getSelf().lift(responseStatusOperator);
   }
 }

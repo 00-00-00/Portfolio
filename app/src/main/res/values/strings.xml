@@ -2,9 +2,9 @@
   <string name="app_name">Portfolio</string>
   <string name="fragment_bio">Bio</string>
   <string name="fragment_projects">Projects</string>
-  <string name="design_desc">Material Design makes sense! Material Design makes sense! Material Design makes sense! Material Design makes sense!</string>
-  <string name="development_desc">Development is the shizz Development is the shizz Development is the shizz Development is the shizz Development is the shizz Development is the shizz</string>
-  <string name="deliver_desc">Le money shot :3 Le money shot :3 Le money shot :3 Le money shot :3 Le money shot :3 Le money shot :3</string>
+  <string name="design_desc">Design is the process of understanding the user, their requirements and outlooks. Understand personas and see how they would like interact with the system. What makes the system blend in with their lives.</string>
+  <string name="development_desc">Structured, maintainable, clean and smooth; Development requires the abstraction of the complication of the business logic from the user.</string>
+  <string name="deliver_desc">Attention to detail is something that characterises a better product. The quality is always apparent.</string>
   <string name="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel viverra metus. Curabitur purus mi, blandit sed lacus nec, congue pretium quam. Phasellus in fermentum lectus, eu placerat orci.</string>
   <string name="find_me">Find me on</string>
   <string name="scroll_for_more">Scroll down</string>

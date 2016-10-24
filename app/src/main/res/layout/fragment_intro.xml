@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="@color/registration_black"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/f_intro_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:background="@color/registration_black"
     android:gravity="center"
     >
   <TextView
@@ -131,7 +131,6 @@
 
   <TextView
       android:id="@+id/f_intro_desc_3"
-
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/f_intro_divider_3"
@@ -140,6 +139,7 @@
       android:layout_marginLeft="@dimen/view_margin_size4"
       android:layout_marginRight="@dimen/view_margin_size4"
       android:gravity="center"
+      android:minLines="5"
       android:text="@string/deliver_desc"
       android:textColor="@color/textColorInverse"
       android:visibility="gone"
