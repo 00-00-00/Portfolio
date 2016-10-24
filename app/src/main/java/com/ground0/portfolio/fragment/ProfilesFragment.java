@@ -9,7 +9,6 @@ import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.ground0.portfolio.R;
@@ -48,6 +47,12 @@ public class ProfilesFragment extends BaseFragment<HomeActivity> {
   @OnClick(R.id.f_profiles_linked) public void launchIn() {
     Uri uri = Uri.parse("http://www.linkedin.com/in/00-00-00");
     startBrowser(uri);
+  }
+
+  @OnClick(R.id.f_profiles_mail) public void launchMail() {
+    Intent intent =
+        new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "arjunnandu.ab@gmail.com", null));
+    startActivity(Intent.createChooser(intent, "Get in touch"));
   }
 
   private void startBrowser(Uri uri) {
