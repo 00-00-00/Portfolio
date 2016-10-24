@@ -27,7 +27,7 @@ public class CoverFragmentViewModel extends BaseFragmentViewModel<CoverFragment>
   }
 
   private void getSelf() {
-    getCompositeSubscription().add(userRepository.getProjects()
+    getCompositeSubscription().add(userRepository.getSelf()
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(subscriptionBuilder.builder().onNext(val -> {
           self = (Self) val;

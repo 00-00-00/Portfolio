@@ -12,7 +12,6 @@ import com.ground0.model.Self;
 import com.ground0.portfolio.R;
 import com.ground0.portfolio.activity.HomeActivity;
 import com.ground0.portfolio.core.components.BaseFragment;
-import com.ground0.portfolio.util.Constants;
 import com.ground0.portfolio.viewmodel.CoverFragmentViewModel;
 import com.squareup.picasso.Picasso;
 import javax.inject.Inject;
@@ -46,13 +45,13 @@ public class CoverFragment extends BaseFragment<HomeActivity> {
   }
 
   private void initUI() {
-    Picasso.with(getContext()).load(Constants.Image_URL).into(imageView);
+    Picasso.with(getContext()).load(R.drawable.prof_sprite).into(imageView);
   }
 
   public void selfRefreshed(Self self) {
     if (self == null) return;
     if (StringUtils.isNotBlank(self.getProfileUrl())) {
-      Picasso.with(getContext()).load(self.getProfileUrl()).into(imageView);
+      Picasso.with(getContext()).load(self.getProfileUrl()).placeholder(R.drawable.prof_sprite).into(imageView);
     }
   }
 }
