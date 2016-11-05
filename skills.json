@@ -1,71 +1,77 @@
 [
-{
-	"name": "Android Development",
-	"category": "Top Skills",
-	"proficiencyPercent": "90"
-},
-{
-      	"name": "Java",
-	"category": "Languages",
-	"proficiencyPercent": "60"
-},
-{
-	"name": "C++",
-	"category": "Languages",
-	"proficiencyPercent": "50"
-},
-{
-	"name": "C",
-	"category": "Languages",
-	"proficiencyPercent": "50"
-},
-{
-	"name": "MySQL",
-	"category": "Languages",
-	"proficiencyPercent": "50"
-},
-{
-	"name": "HTML",
-	"category": "Languages",
-	"proficiencyPercent": "80"
-},
-{
-	"name": "CSS",
-	"category": "Languages",
-	"proficiencyPercent": "60"
-},
-{
-	"name": "User Experience Design",
-	"category": "Top Skills",
-	"proficiencyPercent": "80"
-},
-{
-	"name": "User Interface Design",
-	"category": "Top Skills",
-	"proficiencyPercent": "60"
-},
-{
-	"name": "Dependency Injection",
-	"category": "Tools",
-	"proficiencyPercent": "80"
-},
-{
-	"name": "Data Binding",
-	"category": "Tools",
-	"proficiencyPercent": "100"
-},
-{
-	"name": "RxJava",
-	"category": "Tools",
-	"proficiencyPercent": "80"
-},
-{
-	"name": "Retrofit",
-	"category": "Tools",
-	"proficiencyPercent": "100"
-},
-{
-	"name": "JSON libraries",
-	"category": "Tools",
-	"proficiencyPercent": "80"
-}]
+  {
+    "name": "Design Patterns",
+    "category": "Top Skills",
+    "proficiencyPercent": "60"
+  },
+  {
+    "name": "Android Development",
+    "category": "Top Skills",
+    "proficiencyPercent": "90"
+  },
+  {
+    "name": "Java",
+    "category": "Languages",
+    "proficiencyPercent": "60"
+  },
+  {
+    "name": "C++",
+    "category": "Languages",
+    "proficiencyPercent": "50"
+  },
+  {
+    "name": "C",
+    "category": "Languages",
+    "proficiencyPercent": "50"
+  },
+  {
+    "name": "MySQL",
+    "category": "Languages",
+    "proficiencyPercent": "50"
+  },
+  {
+    "name": "HTML",
+    "category": "Languages",
+    "proficiencyPercent": "80"
+  },
+  {
+    "name": "CSS",
+    "category": "Languages",
+    "proficiencyPercent": "60"
+  },
+  {
+    "name": "User Experience Design",
+    "category": "Top Skills",
+    "proficiencyPercent": "80"
+  },
+  {
+    "name": "User Interface Design",
+    "category": "Top Skills",
+    "proficiencyPercent": "60"
+  },
+  {
+    "name": "Dependency Injection",
+    "category": "Tools",
+    "proficiencyPercent": "80"
+  },
+  {
+    "name": "Data Binding",
+    "category": "Tools",
+    "proficiencyPercent": "100"
+  },
+  {
+    "name": "RxJava",
+    "category": "Tools",
+    "proficiencyPercent": "80"
+  },
+  {
+    "name": "Retrofit",
+    "category": "Tools",
+    "proficiencyPercent": "100"
+  },
+  {
+    "name": "JSON libraries",
+    "category": "Tools",
+    "proficiencyPercent": "80"
+  }
+]
