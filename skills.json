@@ -6,32 +6,32 @@
 },
 {
       	"name": "Java",
-	"category": "Language",
+	"category": "Languages",
 	"proficiencyPercent": "60"
 },
 {
 	"name": "C++",
-	"category": "Language",
+	"category": "Languages",
 	"proficiencyPercent": "50"
 },
 {
 	"name": "C",
-	"category": "Language",
+	"category": "Languages",
 	"proficiencyPercent": "50"
 },
 {
 	"name": "MySQL",
-	"category": "Language",
+	"category": "Languages",
 	"proficiencyPercent": "50"
 },
 {
 	"name": "HTML",
-	"category": "Language",
+	"category": "Languages",
 	"proficiencyPercent": "80"
 },
 {
 	"name": "CSS",
-	"category": "Language",
+	"category": "Languages",
 	"proficiencyPercent": "60"
 },
 {
